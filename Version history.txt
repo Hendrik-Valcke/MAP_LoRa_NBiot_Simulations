@@ -1,0 +1,95 @@
+-----------------------------------
+Land Mobile Multiptah Channel Model
+V 3.2
+-----------------------------------
+
+Author: Andreas Lehner
+Date: 11.09.2015
+
+
+
+
+Version history:
+================
+
+
+
+V 3.2   Released 11.09.2015
+
+	- Improved Fresnel integral implementation used in KnifeEdge.m
+
+
+	
+
+V 3.1   Released 25.06.2014
+
+	- Added support of recent Matlab versions
+
+	- Added support of 64 bit systems
+
+	- Corrected clearance distance calculation in KnifeEdge.m
+
+
+
+
+V 3.0   Released 29.04.2009
+
+	- Added urban and suburban channel model for pedestrian applications to @LandMobileMultipathChannel\LandMobileMultipathChannel.m
+
+	- Added demo file for the urban channel model for pedestrian applications: LandMobileMultipathChannel_Demo_UrbanPedestrian.m
+
+	- Added demo file for the suburban channel model for pedestrian applications: LandMobileMultipathChannel_Demo_SuburbanPedestrian.m
+
+	- Added parameter files (EchoNumberParUrbanPedestrian.mat and EchoParUrbanPedestrian.mat) of the urban environment for pedestrian applications
+
+	- Added parameter files (EchoNumberParSuburbanPedestrian.mat and EchoParSuburbanPedestrian.mat) of the suburban environment for pedestrian applications
+
+	- Added Interface Control Document (ICD - Technical Note DLR-KN-FS-01-08.pdf)        
+
+	- Corrected statistics for reflector movement probability, life distance, echo bandwidth and Rice factor for 30°, 50°, 60° and 80° elevation in EchoParSuburbanCar.mat
+
+	- Corrected statistics for number of coexisting echoes for 30°, 50°, 60° and 80° elevation in EchoNumberParSuburbanCar.mat
+
+
+
+
+V 2.01  Released 28.02.2008
+
+	- Added fcs.mexw32 file to support the latest Matlab Versions on 32-bit Windows systems
+
+
+
+
+V 2.0   Released 26.10.2007
+	
+	- Added suburban channel model for car applications to @LandMobileMultipathChannel\LandMobileMultipathChannel.m
+
+	- Added demo file for the suburban channel model for car applications: LandMobileMultipathChannel_Demo_SuburbanCar.m
+
+	- Added parameter files (EchoNumberParSuburbanCar.mat and EchoParSuburbanCar.mat) of the suburban environment for car applications
+	
+	- Added fcs.mexglx file to support Linux platforms
+
+	- Updated software usage description in technical note DLR-KN-FS-02-07.pdf
+
+	- Changes in @LandMobileMultipathChannel\generate.m enabling the (not recommended) deactivation of both building rows
+
+	- Renaming of LandMobileMultipathChannel_Demo.m in LandMobileMultipathChannel_Demo_UrbanCar.m
+
+	- Correction of tree trunk diameter for Knife Edge calculation in @Tree\generate.m
+
+
+
+
+V 1.01  Released 13.07.2006
+
+	- Corrected housefront generation in @Housefronts\generate.m for receiver positions exceeding the "ScenerySize" defined in @LandMobileMultipathChannel\LandMobileMultipathChannel.m  
+    
+	- Corrected vertical reflector position determination in @EchoGenerator\generate.m which could occure to be -inf for satellite elevation = 90° 
+
+
+
+
+V 1.0	Released 21.11.2005
+
+
