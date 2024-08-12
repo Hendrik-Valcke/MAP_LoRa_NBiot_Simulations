@@ -20,7 +20,7 @@ function decodedBits=demodulateLoraSignal(loraSignal,SF,numSym)
     [~, ind]=max(corrs);
     dechirpedSymbols(i)=ind-1; %-1 because DC is counted in fft so all bins are +1
     end
-    dechirpedSymbols
+    dechirpedSymbols;
     decodedBitsMatrix=transpose(decimalToBinaryVector(dechirpedSymbols,SF));
     decodedBits=transpose(reshape(decodedBitsMatrix,[],SF*numSym));
 end

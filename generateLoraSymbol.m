@@ -15,4 +15,5 @@ function loraSymbol = generateLoraSymbol(symbolValue,SF)
         end
 
     end
+   
 end

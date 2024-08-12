@@ -11,12 +11,12 @@ function loraSignal=generateLoraSignal(messageBits,SF,numSym)
         error('there need to be SF databits per symbol')
     else
         %group SF bits together per symbol
-        symbolBits=reshape(messageBits,[],numSym)%first column is the bits of the first symbol
+        symbolBits=reshape(messageBits,[],numSym);%first column is the bits of the first symbol
         decimalSymbols=transpose(binaryVectorToDecimal(transpose(symbolBits)))%to check the value
         loraSignal=[];
         for i=1:numSym
             loraSignal=[loraSignal generateLoraSymbol(decimalSymbols(1,i),SF)];
         end
     end
-    
+     
 end
