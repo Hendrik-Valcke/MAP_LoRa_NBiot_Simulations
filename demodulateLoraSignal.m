@@ -15,8 +15,9 @@ function decodedBits=demodulateLoraSignal(loraSignal,SF,numSym)
     dechirpedSymbols=zeros(1,numSym);
     for i=1:numSym
     dechirped=loraSignal(((i-1)*SPS)+1:i*SPS).*base_down_chirp;
+    corrs=((fft(dechirped,2^SF)));
 
-    corrs=(abs(fft(dechirped)).^2);
+    % corrs=(abs(fft(dechirped)).^2);
     [~, ind]=max(corrs);
     dechirpedSymbols(i)=ind-1; %-1 because DC is counted in fft so all bins are +1
     end
