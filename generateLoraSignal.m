@@ -1,4 +1,4 @@
-function loraSignal=generateLoraSignal(messageBits,SF,numSym)
+function [loraSignal,symbols]=generateLoraSignal(messageBits,SF,numSym)
     % % input:
     % % messageBits is a 1xn binary vector
     % % SF is the spreading factor and the amount of samples per symbol
@@ -12,11 +12,15 @@ function loraSignal=generateLoraSignal(messageBits,SF,numSym)
     else
         %group SF bits together per symbol
         symbolBits=reshape(messageBits,[],numSym);%first column is the bits of the first symbol
-        decimalSymbols=transpose(binaryVectorToDecimal(transpose(symbolBits)))%to check the value
+        decimalSymbols=transpose(binaryVectorToDecimal(transpose(symbolBits)));%to check the value
         loraSignal=[];
         for i=1:numSym
             loraSignal=[loraSignal generateLoraSymbol(decimalSymbols(1,i),SF)];
         end
+    end
+    if nargout > 1
+        symbols=decimalSymbols;
+    else
     end
      
 end

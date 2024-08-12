@@ -1,4 +1,4 @@
-function decodedBits=demodulateLoraSignal(loraSignal,SF,numSym)
+function [decodedBits,decodedSymbols]=demodulateLoraSignal(loraSignal,SF,numSym)
 
     SPS=2^SF;
     %generate base downchirp
@@ -24,4 +24,8 @@ function decodedBits=demodulateLoraSignal(loraSignal,SF,numSym)
     dechirpedSymbols;
     decodedBitsMatrix=transpose(decimalToBinaryVector(dechirpedSymbols,SF));
     decodedBits=transpose(reshape(decodedBitsMatrix,[],SF*numSym));
+    if nargout > 1
+        decodedSymbols=dechirpedSymbols;
+    else
+    end
 end
