@@ -1,0 +1,12 @@
+function ofdmTimeSignal=generateOfdmSignal(inputSignal,numSC,SCS,cpLen)
+    % %input:
+    % % complex signal
+    % % number of subcarriers
+    % % subcarrier spacing
+    % % cyclic prefix length
+
+    % % the signal is divided across n carriers, those carriers are added
+    % together (ifft)
+    numSym=length(inputSignal)/numSC;
+    SPS=numSC;%samples per symbol
+end
