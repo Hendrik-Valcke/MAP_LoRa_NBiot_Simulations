@@ -8,5 +8,5 @@ function qpskSymbols = generateQpskSymbols(messageBits)
         idx = messageInts(k) + 1; %map index
         messageSymbols(k) = symbolMap(idx); %symbolmap
     end
-    qpskSymbols=messageSymbols
+    qpskSymbols=messageSymbols;
 end
